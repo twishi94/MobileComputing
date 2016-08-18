@@ -2,6 +2,7 @@ package com.example.cozoo.a1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,9 +17,17 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     boolean ans = false;
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random();
@@ -80,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Perform action on click
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
                 startActivity(intent);
             }
         });
